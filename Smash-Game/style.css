@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#board{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 2px solid black;
+}
+.ball{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.uBlock{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    background-color:gray;
+    bottom: 2px;
+}

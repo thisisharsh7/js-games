@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sendOut{
+    animation-name: viewOut;
+    animation-duration: 3s;
+}
+@keyframes viewOut {
+    from{
+       transform: translateY(0);
+    }
+    to{
+        transform: translateY(100%);
+    }
+}
+.show{
+    display: flex;
+    animation-name: viewIn;
+    animation-duration: 3s;
+}
+.hide{
+    display: none;
+}
+@keyframes viewIn {
+    from{
+       transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.abs{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+}

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body style="min-height: 100vh; max-width: 1440px; margin: auto">
+    <h1 style="text-align: center">
+      Select Card with most <span id="cardCompareDisplay"></span>
+    </h1>
+    <br />
+    <br />
+    <div style="display: flex; justify-content: center">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 2em;
+        "
+      >
+        <div style="max-width: 100%; min-width: 270px">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0.5em;
+              align-items: center;
+            "
+          >
+            <p style="font-size: 1.2em; font-weight: bold">
+              <span style="font-size: 1.2em">💻Computer</span> choice:
+            </p>
+            <div
+              id="compChoiceDisplay"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                color: white;
+                position: relative;
+              "
+            >
+              <div
+                style="
+                  width: 80%;
+                  display: flex;
+                  align-self: center;
+                  position: relative;
+                "
+              >
+                <img src="crick.jpg" alt="" style="width: 100%" />
+                <div class="overlay1"></div>
+              </div>
+              <div style="position: relative">
+                <ul
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                    background-color: black;
+                    padding: 1em;
+                    list-style: none;
+                  "
+                  id="compValues"
+                >
+                  <li>Matches: <span class="Matches"></span></li>
+                  <li>Runs: <span class="Runs"></span></li>
+                  <li>Wickets: <span class="Wickets"></span></li>
+                  <li>BST: <span class="BST"></span></li>
+                  <li>Avg: <span class="Average"></span></li>
+                  <li>Eco: <span class="Economy"></span></li>
+                  <li>HS: <span class="HighScore"></span></li>
+                  <li>Fanstasy: <span class="Fanstasy"></span></li>
+                </ul>
+                <div class="overlay1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            style="
+              padding: 0.5em 1.5em;
+              cursor: pointer;
+              font-weight: medium;
+              background-color: black;
+              color: white;
+            "
+            onclick="location.reload(true)"
+          >
+            Restart
+          </button>
+        </div>
+        <div style="max-width: 100%; min-width: 250px">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0.5em;
+              align-items: center;
+            "
+          >
+            <p style="font-size: 1.2em; font-weight: bold">
+              <span style="font-size: 1.2em">👤User</span> choice:
+            </p>
+            <div
+              id="userChoiceDisplay"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                color: white;
+              "
+            >
+              <div
+                style="
+                  width: 80%;
+                  display: flex;
+                  align-self: center;
+                  position: relative;
+                "
+              >
+                <img src="crick.jpg" alt="" style="width: 100%" />
+                <div class="overlay2"></div>
+              </div>
+              <div style="position: relative">
+                <ul
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                    background-color: black;
+                    padding: 1em;
+                    list-style: none;
+                  "
+                  id="compValues"
+                >
+                  <li>Matches: <span class="Matches"></span></li>
+                  <li>Runs: <span class="Runs"></span></li>
+                  <li>Wickets: <span class="Wickets"></span></li>
+                  <li>BST: <span class="BST"></span></li>
+                  <li>Avg: <span class="Average"></span></li>
+                  <li>Eco: <span class="Economy"></span></li>
+                  <li>HS: <span class="HighScore"></span></li>
+                  <li>Fanstasy: <span class="Fanstasy"></span></li>
+                </ul>
+                <div class="overlay2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="
+        position: sticky;
+        top: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <p style="font-size: 1.4em; font-weight: bold">
+        Result: <span id="choiceResult" style="font-size: 2em"></span>
+      </p>
+      <div
+        id="cards"
+        style="gap: 2em; padding: 2em; flex-wrap: wrap; justify-content: center"
+        ;
+      >
+        <div
+          style="
+            color: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 240px;
+          "
+          onclick="handleClick(this)"
+        >
+          <div style="width: 80%; display: flex; align-self: center">
+            <img src="crick.jpg" alt="" style="width: 100%" />
+          </div>
+          <ul
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              background-color: black;
+              padding: 1em;
+              list-style: none;
+            "
+          >
+            <li>Matches: <span class="Matches"></span></li>
+            <li>Runs: <span class="Runs"></span></li>
+            <li>Wickets: <span class="Wickets"></span></li>
+            <li>BST: <span class="BST"></span></li>
+            <li>Avg: <span class="Average"></span></li>
+            <li>Eco: <span class="Economy"></span></li>
+            <li>HS: <span class="HighScore"></span></li>
+            <li>Fanstasy: <span class="Fanstasy"></span></li>
+          </ul>
+        </div>
+        <div
+          style="
+            color: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 240px;
+          "
+          onclick="handleClick(this)"
+        >
+          <div style="width: 80%; display: flex; align-self: center">
+            <img src="crick.jpg" alt="" style="width: 100%" />
+          </div>
+          <ul
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              background-color: black;
+              padding: 1em;
+              list-style: none;
+            "
+          >
+            <li>Matches: <span class="Matches"></span></li>
+            <li>Runs: <span class="Runs"></span></li>
+            <li>Wickets: <span class="Wickets"></span></li>
+            <li>BST: <span class="BST"></span></li>
+            <li>Avg: <span class="Average"></span></li>
+            <li>Eco: <span class="Economy"></span></li>
+            <li>HS: <span class="HighScore"></span></li>
+            <li>Fanstasy: <span class="Fanstasy"></span></li>
+          </ul>
+        </div>
+        <div
+          style="
+            color: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 240px;
+          "
+          onclick="handleClick(this)"
+        >
+          <div style="width: 80%; display: flex; align-self: center">
+            <img src="crick.jpg" alt="" style="width: 100%" />
+          </div>
+          <ul
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              background-color: black;
+              padding: 1em;
+              list-style: none;
+            "
+          >
+            <li>Matches: <span class="Matches"></span></li>
+            <li>Runs: <span class="Runs"></span></li>
+            <li>Wickets: <span class="Wickets"></span></li>
+            <li>BST: <span class="BST"></span></li>
+            <li>Avg: <span class="Average"></span></li>
+            <li>Eco: <span class="Economy"></span></li>
+            <li>HS: <span class="HighScore"></span></li>
+            <li>Fanstasy: <span class="Fanstasy"></span></li>
+          </ul>
+        </div>
+        <div
+          style="
+            color: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 240px;
+          "
+          onclick="handleClick(this)"
+        >
+          <div style="width: 80%; display: flex; align-self: center">
+            <img src="crick.jpg" alt="" style="width: 100%" />
+          </div>
+          <ul
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              background-color: black;
+              padding: 1em;
+              list-style: none;
+            "
+          >
+            <li>Matches: <span class="Matches"></span></li>
+            <li>Runs: <span class="Runs"></span></li>
+            <li>Wickets: <span class="Wickets"></span></li>
+            <li>BST: <span class="BST"></span></li>
+            <li>Avg: <span class="Average"></span></li>
+            <li>Eco: <span class="Economy"></span></li>
+            <li>HS: <span class="HighScore"></span></li>
+            <li>Fanstasy: <span class="Fanstasy"></span></li>
+          </ul>
+        </div>
+        <div
+          style="
+            color: white;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            max-width: 240px;
+          "
+          onclick="handleClick(this)"
+        >
+          <div style="width: 80%; display: flex; align-self: center">
+            <img src="crick.jpg" alt="" style="width: 100%" />
+          </div>
+          <ul
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              background-color: black;
+              padding: 1em;
+              list-style: none;
+            "
+          >
+            <li>Matches: <span class="Matches"></span></li>
+            <li>Runs: <span class="Runs"></span></li>
+            <li>Wickets: <span class="Wickets"></span></li>
+            <li>BST: <span class="BST"></span></li>
+            <li>Avg: <span class="Average"></span></li>
+            <li>Eco: <span class="Economy"></span></li>
+            <li>HS: <span class="HighScore"></span></li>
+            <li>Fanstasy: <span class="Fanstasy"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
