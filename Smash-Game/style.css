@@ -22,11 +22,28 @@ body{
     height: 30px;
     background-color: blue;
     border-radius: 50%;
+    bottom: 0;
 }
-.uBlock{
+
+.uBlock , .cBlock{
     position: absolute;
     width: 100px;
     height: 25px;
     background-color:gray;
-    bottom: 2px;
+    bottom: 4px;
+}
+.cBlock{
+    width: 83.5px;
+    position: relative;
+    background-color:red;
+    margin-top: 4px;
+}
+.cBlocks{
+    position: absolute;
+    top:4px;
+    left:4px;
+    right: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
