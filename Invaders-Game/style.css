@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#board-body{
+    border: 2px solid black;
+    padding: 4px;
+}
+#board{
+    width: 400px;
+    height: 500px;
+}
