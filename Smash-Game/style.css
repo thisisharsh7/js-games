@@ -10,11 +10,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+#board-body{
+    border: 2px solid black;
+    padding: 8px;
+}
 #board{
     position: relative;
-    width: 800px;
+    width: 760px;
     height: 500px;
-    border: 2px solid black;
+    
+
 }
 .ball{
     position: absolute;
@@ -22,7 +27,6 @@ body{
     height: 30px;
     background-color: blue;
     border-radius: 50%;
-    bottom: 0;
 }
 
 .uBlock , .cBlock{
@@ -30,20 +34,10 @@ body{
     width: 100px;
     height: 25px;
     background-color:gray;
-    bottom: 4px;
+}
+.uBlock{
+    bottom: 0px;
 }
 .cBlock{
-    width: 83.5px;
-    position: relative;
     background-color:red;
-    margin-top: 4px;
-}
-.cBlocks{
-    position: absolute;
-    top:4px;
-    left:4px;
-    right: 4px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
 }
